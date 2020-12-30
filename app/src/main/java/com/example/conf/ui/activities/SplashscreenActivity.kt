@@ -7,6 +7,6 @@ import com.example.conf.R
 class SplashscreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splashscreen2)
+        setContentView(R.layout.activity_splashscreen)
     }
 }
