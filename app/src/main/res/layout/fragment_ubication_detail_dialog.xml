@@ -11,7 +11,9 @@
         <Toolbar
             android:id="@+id/toolbarUbication"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></Toolbar>
+            android:layout_height="wrap_content">
+
+        </Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout
