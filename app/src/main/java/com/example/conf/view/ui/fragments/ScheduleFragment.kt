@@ -42,31 +42,6 @@ class ScheduleFragment : Fragment(), ScheduleListener {
         }
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        viewModel = ViewModelProviders.of(this).get(ScheduleViewModel::class.java)
-        viewModel.refresh()
-
-        scheduleAdapter = ScheduleAdapter(this)
-
-        rvSchedule.apply {
-            layoutManager = LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL, false)
-            adapter = scheduleAdapter
-        }
-
-        observeViewModel()
-    }
-
-    private fun observeViewModel() {
-        viewModel.listSchedule.observe(this, Observer<List<Conference>> { schedule ->
-            scheduleAdapter.updateData(schedule)
-        })
-        viewModel.isLoading.observe(this, Observer<Boolean>{
-            if (it != null)
-                rlBaseSchedule.visibility = View.INVISIBLE
-        })
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

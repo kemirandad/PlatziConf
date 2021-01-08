@@ -11,7 +11,9 @@
         <Toolbar
             android:id="@+id/toolbarConference"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></Toolbar>
+            android:layout_height="wrap_content">
+
+        </Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout
@@ -29,13 +31,13 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="200dp">
+                    android:layout_height="220dp">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/platzi_conf_2" />
+                        android:src="@drawable/platzi_conf_2"/>
 
                     <View
                         android:layout_width="match_parent"
@@ -44,7 +46,7 @@
                         android:background="@color/colorPrimary" />
 
                     <TextView
-                        android:id="@+id/tvItemScheduleHour"
+                        android:id="@+id/tvItemScheduleTituloConferencia"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
