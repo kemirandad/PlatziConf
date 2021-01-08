@@ -1,11 +1,12 @@
 package com.example.conf.viewmodel
 
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.example.conf.model.Speaker
 import com.example.conf.network.Callback
 import com.example.conf.network.FirestoreService
 
-class SpeakerViewModel {
+class SpeakerViewModel: ViewModel() {
         val firestoreService = FirestoreService()
         var listSpeakers: MutableLiveData<List<Speaker>> = MutableLiveData()
         var isLoading = MutableLiveData<Boolean>()
