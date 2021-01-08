@@ -8,6 +8,8 @@ import com.example.conf.model.Speaker
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import kotlin.collections.ArrayList
 
 class SpeakerAdapter(val speakerListener: SpeakerListener): RecyclerView.Adapter<SpeakerAdapter.ViewHolder>() {
@@ -19,8 +21,19 @@ class SpeakerAdapter(val speakerListener: SpeakerListener): RecyclerView.Adapter
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val speaker = listSpeaker[position] as Speaker
         //holder.ivSpeakerImage = speaker.image
+
+        Glide.with(holder.ivSpeakerImage.context)
+                .load(speaker.image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder.ivSpeakerImage)
+
         holder.tvSpeakerName.text = speaker.name
         holder.tvSpakerWork.text = speaker.jobtitle
+
+        holder.itemView.setOnClickListener{
+            speakerListener.onSpeakerClicked(speaker, position)
+        }
+
     }
 
     fun updateData(data: List<Speaker>){
