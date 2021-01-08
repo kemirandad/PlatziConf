@@ -76,6 +76,31 @@ class ScheduleFragment : Fragment(), ScheduleListener {
         return inflater.inflate(R.layout.fragment_schedule, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel = ViewModelProviders.of(this).get(ScheduleViewModel::class.java)
+        viewModel.refresh()
+
+        scheduleAdapter = ScheduleAdapter(this)
+
+        rvSchedule.apply{
+            layoutManager = LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL, false)
+            adapter = scheduleAdapter
+        }
+        observeViewModel()
+    }
+
+    private fun observeViewModel() {
+        viewModel.listSchedule.observe(this, Observer<List<Conference>>{ schedule ->
+            scheduleAdapter.updateData(schedule)
+        })
+        viewModel.isLoading.observe(this, Observer<Boolean> {
+            if (it != null)
+                rlBaseSchedule.visibility = View.INVISIBLE
+        })
+    }
+
     companion object {
         /**
          * Use this factory method to create a new instance of
