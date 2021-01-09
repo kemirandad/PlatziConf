@@ -12,7 +12,6 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import com.example.conf.R
 import com.example.conf.model.Ubication
-import kotlinx.android.synthetic.main.fragment_schedule_detail_dialog.*
 import kotlinx.android.synthetic.main.fragment_ubication_detail_dialog.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -66,14 +65,14 @@ class UbicationDetailDialogFragment : DialogFragment() {
         tvDetailUbicationWebsite.text = ubication.website
 
         llTelefonoLugar.setOnClickListener {
-            val intent = Intent(Intent.ACTION_DIAL).apply {
-                data = Uri.parse("Tel : ${ubication.phone}")
+            val intent = Intent (Intent.ACTION_DIAL).apply{
+                data = Uri.parse ("tel: ${ubication.phone}")
             }
             startActivity(intent)
         }
         llWebsiteLugar.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse(ubication.phone)
+            intent.data = Uri.parse(ubication.website)
             startActivity(intent)
         }
     }

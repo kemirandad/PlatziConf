@@ -47,7 +47,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:background="@drawable/shape_parrafo">
 
                         <TextView
                             android:id="@+id/tvDetailUbicationName"
@@ -59,6 +60,10 @@
                             android:textStyle="bold"
                             android:textColor="@color/colorPrimary"
                             android:textSize="30sp" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/colorPrimary"/>
 
                         <LinearLayout
                             android:layout_width="match_parent"

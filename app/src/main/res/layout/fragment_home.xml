@@ -32,6 +32,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/altoImageViewHome"
+                        android:layout_marginTop="1dp"
                         android:src="@drawable/banner_platzi_conf" />
 
                     <View
@@ -67,7 +68,7 @@
                         android:textSize="@dimen/tamanioSubtitulo"
                         android:textStyle="bold"
                         android:justificationMode="inter_word"
-                        />
+                        android:layout_marginBottom="10dp"/>
 
                 </LinearLayout>
 
@@ -119,9 +120,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/marginHomeSubtitulo"
-                        android:layout_marginTop="@dimen/marginHomeSubtitulo"
-                        android:layout_marginEnd="@dimen/marginHomeSubtitulo"
+                        android:layout_margin="10dp"
                         android:text="@string/inicio_frag_tv_por_que_resp"
                         android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/tamanioSubtitulo"
@@ -178,9 +177,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/marginHomeSubtitulo"
-                        android:layout_marginTop="@dimen/marginHomeSubtitulo"
-                        android:layout_marginEnd="@dimen/marginHomeSubtitulo"
+                        android:layout_margin="10dp"
                         android:text="@string/inicio_frag_tv_info_resp"
                         android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/tamanioSubtitulo"
